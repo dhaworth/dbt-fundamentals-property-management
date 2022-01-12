@@ -4,9 +4,9 @@ with payments as (
         id as payment_id,
         orderid as order_id,
         paymentmethod as payment_method,
-        amount/100 as amount,
+        amount/100 as payment_amount,
         created as created_at,
-        status
+        status as payment_status
 
     from {{ source('stripe', 'payment') }}
 )

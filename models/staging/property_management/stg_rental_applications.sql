@@ -3,9 +3,9 @@ with rental_applications as (
     select
         
         id as rental_application_id,
-        status,
+        status as rental_application_status,
         contact_info_id,
-        deleted_at,
+        deleted_at as rental_application_deleted_at,
         created_at,
         uploaded_at
     
