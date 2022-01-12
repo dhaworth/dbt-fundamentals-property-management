@@ -1,0 +1,16 @@
+with contact_infos as (
+
+    select
+        
+        id,
+        first_name,
+        last_name,
+        email_address,
+        phone_number,
+        created_at,
+        uploaded_at  
+
+    from {{ source('property_management', 'contact_infos') }}
+)
+
+select * from contact_infos
