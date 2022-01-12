@@ -2,7 +2,7 @@ with email_delivery_statuses as (
 
     select
 
-        id,
+        id as email_delivery_status_id,
         event,
         email_id,
         created_at,

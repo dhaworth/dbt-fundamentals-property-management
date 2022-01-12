@@ -2,7 +2,7 @@ with units as (
 
     select
         
-        id,
+        id as unit_id,
         rent,
         property_id,
         name,

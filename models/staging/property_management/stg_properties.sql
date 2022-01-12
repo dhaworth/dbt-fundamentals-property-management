@@ -2,7 +2,7 @@ with properties as (
 
     select
         
-        id,
+        id as property_id,
         name,
         address,
         city,

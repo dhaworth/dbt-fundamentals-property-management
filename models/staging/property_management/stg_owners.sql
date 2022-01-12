@@ -2,7 +2,7 @@ with owners as (
 
     select
         
-        id,
+        id as owner_id,
         contact_info_id,
         bank_account_id,
         created_at,

@@ -2,7 +2,7 @@ with tenants as (
 
     select
         
-        id,
+        id as tenant_id,
         contact_info_id,
         bank_account_id,
         lease_id,

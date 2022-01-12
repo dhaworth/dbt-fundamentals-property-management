@@ -2,7 +2,7 @@ with rental_applications as (
 
     select
         
-        id,
+        id as rental_application_id,
         status,
         contact_info_id,
         deleted_at,

@@ -2,7 +2,7 @@ with vendors as (
 
     select
         
-        id,
+        id as vendor_id,
         contact_info_id,
         bank_account_id,
         created_at,

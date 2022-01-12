@@ -2,7 +2,7 @@ with contact_infos as (
 
     select
         
-        id,
+        id as contact_info_id,
         first_name,
         last_name,
         email_address,

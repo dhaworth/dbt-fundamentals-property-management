@@ -2,7 +2,7 @@ with emails as (
 
     select
 
-        id,
+        id as email_id,
         subject,
         body,
         sent_at,

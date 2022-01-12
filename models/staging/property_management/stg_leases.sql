@@ -2,7 +2,7 @@ with leases as (
 
     select
     
-        id,
+        id as lease_id,
         unit_id,
         rental_application_id,
         completed,

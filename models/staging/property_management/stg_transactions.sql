@@ -2,7 +2,7 @@ with transactions as (
 
     select
         
-        id,
+        id as transaction_id,
         type,
         amount,
         payer,
