@@ -3,7 +3,6 @@ with emails as (
     select
 
         id,
-        name,
         subject,
         body,
         sent_at,
