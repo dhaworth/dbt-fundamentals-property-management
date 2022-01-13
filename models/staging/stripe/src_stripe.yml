@@ -1,0 +1,34 @@
+version: 2
+
+sources:
+  - name: stripe
+    database: raw
+    schema: stripe
+    tables:
+      - name: payment
+        description: Payment transactions from Stripe account
+        loaded_at_field: _batched_at
+        freshness:
+          warn_after: {count: 6, period: hour}
+          error_after: {count: 12, period: hour}
+        columns:
+          - name: id
+            description: Primary key of the payments table
+            tests: 
+              - unique
+              - not_null
+
+model:
+  - name: stg_payments
+    columns:
+      - name: payment_amount
+        tests:
+          - name: assert_positive_value_for_total_amount
+      - name: payment_method
+        tests:
+          - accepted_values:
+              values:
+                - credit_card
+                - coupon
+                - bank_transfer
+                - gift_card

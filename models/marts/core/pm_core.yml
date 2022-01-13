@@ -1,0 +1,45 @@
+version: 2
+
+models:
+  - name: dim_owners
+    description: These are the owners including bank account and contact information
+    columns:
+      - name: owner_id
+        description: Id of the owner
+  - name: dim_properties
+    description: These are the properties including owner and unit information
+    columns:
+      - name: property_name
+        description: Name of the property
+  - name: dim_tenants
+    description: These are the tenants including bank account and contact information
+    columns:
+      - name: lease_id
+        description: Id of the tenant's lease
+  - name: dim_vendors
+    description: These are the vendors including bank account and contact information
+    columns:
+      - name: vendor_id
+        description: Id of the tenant
+  - name: fct_emails_delivered
+    description: These are the emails that are in a delivered status
+    columns:
+      - name: email_id
+        description: Id of the delivered email
+  - name: fct_leases_executed
+    description: These are the leases that have been marked as completed
+    columns:
+      - name: lease_id
+        description: Id of the completed lease
+  - name: fct_rent_payments
+    description: These are the rent payments by tenants
+    columns:
+      - name: transaction_type
+        description: Type of transaction
+  - name: fct_total_transactions
+    description: These are the total transactions for tenant payments
+    columns:
+      - name: transaction_id
+        description: Id of transaction
+      - name: payment_id
+        description: Id of payment
