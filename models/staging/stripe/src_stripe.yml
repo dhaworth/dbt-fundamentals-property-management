@@ -6,7 +6,27 @@ sources:
     schema: stripe
     tables:
       - name: payment
+        columns:
+          - name: id
+            tests: 
+              - unique
+              - not_null
         loaded_at_field: _batched_at
         freshness:
           warn_after: {count: 12, period: hour}
           error_after: {count: 24, period: hour}
+
+model:
+  - name: stg_payments
+    columns:
+      - name: payment_amount
+        tests:
+          - name: assert_positive_value_for_total_amount
+      - name: payment_method
+        tests:
+          - accepted_values:
+              values:
+                - credit_card
+                - coupon
+                - bank_transfer
+                - gift_card
